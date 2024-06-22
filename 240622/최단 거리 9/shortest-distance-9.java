@@ -68,6 +68,7 @@ public class Main {
             int b=scan.nextInt();
             int c= scan.nextInt();
             v.get(a).add(new Pair(b,c));
+            v.get(b).add(new Pair(a,c));
         }
         xx=scan.nextInt();
         yy=scan.nextInt();
