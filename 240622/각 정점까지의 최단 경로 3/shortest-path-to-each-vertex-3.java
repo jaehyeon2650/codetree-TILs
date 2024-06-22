@@ -33,7 +33,11 @@ public class Main {
             }
         }
         for(int i=2;i<=n;i++){
-            System.out.println(d[i]);
+            if(d[i]==Integer.MAX_VALUE){
+                System.out.println(-1);
+            }else{
+                System.out.println(d[i]);
+            }
         }
     }
     public static void main(String[] args) {
