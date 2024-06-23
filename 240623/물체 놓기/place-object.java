@@ -16,12 +16,12 @@ public class Main {
     }
     public static int n;
     public static int[] d;
-    public static int start;
     public static int[] visited;
     public static Vector<Vector<Pair>> v=new Vector<>();
     public static void solution(){
         PriorityQueue<Pair> pq=new PriorityQueue<>();
-        pq.add(new Pair(start,d[start]));
+        d[0]=0;
+        pq.add(new Pair(0,d[0]));
         int total=0;
         while(!pq.isEmpty()){
             Pair cur=pq.poll();
@@ -41,17 +41,14 @@ public class Main {
         Scanner scan=new Scanner(System.in);
         n=scan.nextInt();
         d=new int[n+1];
+        Arrays.fill(d,Integer.MAX_VALUE);
         visited=new int[n+1];
         for(int i=0;i<=n;i++){
             v.add(new Vector<>());
         }
-        int maxn=Integer.MAX_VALUE;
         for(int i=1;i<=n;i++){
-            d[i]=scan.nextInt();
-            if(maxn>d[i]){
-                maxn=d[i];
-                start=i;
-            }
+            int a=scan.nextInt();
+            v.get(0).add(new Pair(i,a));
         }
         for(int i=1;i<=n;i++){
             for(int j=1;j<=n;j++){
