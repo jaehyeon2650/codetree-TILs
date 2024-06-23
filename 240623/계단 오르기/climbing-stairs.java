@@ -5,7 +5,7 @@ public class Main {
     public static int[] stairs=new int[1001];
     public static int up(int x){
         if(stairs[x]!=-1) return stairs[x];
-        return stairs[x]=up(x-2)+up(x-3);
+        return stairs[x]=(up(x-2)+up(x-3))%10007;
     }
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
