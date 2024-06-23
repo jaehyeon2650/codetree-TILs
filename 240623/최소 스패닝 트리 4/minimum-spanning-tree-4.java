@@ -34,26 +34,21 @@ public class Main {
     }
     public static void solution(){
         int total=0;
+        int edges_num=0;
         for(Edge e:edges){
             if(find(e.v1)!=find(e.v2)&&state[e.v1]!=state[e.v2]){
                 total+=e.weight;
+                edges_num++;
                 union(e.v1,e.v2);
             }
         }
-        boolean can=true;
-        int first=find(1);
-        for(int i=2;i<=n;i++){
-            if(first!=find(i)){
-                can=false;
-                break;
-            }
-        }
-        if(can){
+        
+        if(edges_num==n-1){
             System.out.println(total);
         }else{
             System.out.println(-1);
         }
-        
+
     }
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
