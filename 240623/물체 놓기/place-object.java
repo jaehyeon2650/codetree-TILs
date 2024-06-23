@@ -29,7 +29,7 @@ public class Main {
                 visited[cur.x]=1;
                 total+=cur.weight;
                 for(Pair next:v.get(cur.x)){
-                    if(d[next.x]<next.weight) continue;
+                    if(d[next.x]<=next.weight) continue;
                     d[next.x]=next.weight;
                     pq.add(new Pair(next.x, d[next.x]));
                 }
