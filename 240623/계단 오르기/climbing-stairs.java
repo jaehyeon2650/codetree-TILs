@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main {
     public static int n;
-    public static int[] stairs=new int[46];
+    public static int[] stairs=new int[1001];
     public static int up(int x){
         if(stairs[x]!=-1) return stairs[x];
         return stairs[x]=up(x-2)+up(x-3);
