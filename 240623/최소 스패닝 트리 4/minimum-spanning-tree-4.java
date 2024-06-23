@@ -40,11 +40,20 @@ public class Main {
                 union(e.v1,e.v2);
             }
         }
-        if(total==0){
-            System.out.println(-1);
-        }else{
-            System.out.println(total);
+        boolean can=true;
+        int first=find(1);
+        for(int i=2;i<=n;i++){
+            if(first!=find(i)){
+                can=false;
+                break;
+            }
         }
+        if(can){
+            System.out.println(total);
+        }else{
+            System.out.println(-1);
+        }
+        
     }
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
